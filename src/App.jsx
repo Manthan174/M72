@@ -5,15 +5,13 @@ import Agence from './pages/Agence'
 import Projects from './pages/Projects'
 import Navbar from './navigation/Navbar.jsx'
 import FullScreenNav from './navigation/FullScreenNav.jsx'
+import Contact from './component/contact/Contact.jsx'
 
 const App = () => { 
 
   return (
     
       <div className='overflow-x-hidden'>
-        {/* <Link className='text-blue-600 mr-5 text-sm' to='/'>Home</Link>
-        <Link className='text-blue-600 mr-5 text-sm' to='/projects'>Projects</Link>
-        <Link className='text-blue-600 mr-5 text-sm' to='/agence'>Agence</Link> */}
         <Navbar/>
         <FullScreenNav/>
         
@@ -21,6 +19,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/agence' element={<Agence />} />
           <Route path='/projects' element={<Projects />} />
+          <Route path='/contact' element={<Contact/>} />
         </Routes>
       </div>
     
