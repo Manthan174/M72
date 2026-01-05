@@ -21,7 +21,7 @@ const Contact = () => {
         { x: 0 },
         {
           x: index % 2 === 0 ? -distance : distance,
-          duration: 20,
+          duration: 25,
           ease: "none",
           repeat: -1,
           modifiers: {
@@ -73,7 +73,7 @@ const Contact = () => {
                 text-[10vw] md:text-[6vw] uppercase font-bold font-[font1] "
             >
               {[...Array(2)].map((_, dup) =>
-                Array(100)
+                Array(4)
                   .fill("Manthan@M72.ca")
                   .map((text, index) => (
                     <span

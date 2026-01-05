@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React, { useContext , useRef, } from 'react'
+import React, { useContext , useEffect, useRef, useState, } from 'react'
 import { NavbarContext } from '../contaxt/NavContext'
 import { Link, useNavigate } from 'react-router-dom'
 import Projects from '../pages/Projects'
@@ -10,9 +10,18 @@ const FullScreenNav = () => {
     const fullScreenRef = useRef(null)
 
     const [navOpen, setNavOpen] = useContext(NavbarContext)
+  
+useEffect(() => {
+  if (navOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 
-
-
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [navOpen]);
 
 
     function gsapAnimation() {
@@ -89,8 +98,10 @@ const FullScreenNav = () => {
     }, [navOpen])
 
   return (
-    <div ref={fullScreenRef} id='fullscreenav' className='fullscreennav z-50 hidden text-white h-screen overflow-hidden w-full absolute'>
-      <div className='h-screen w-full fixed'>
+    
+    <div ref={fullScreenRef} id='fullscreenav' className='fullscreennav z-50  text-white h-screen overflow-hidden w-full fixed inset-0'>
+      
+      <div className='h-screen w-full fixed overflow-hidden inset-0 '>
          <div className='h-full w-full flex'>
           <div className='stairing h-full w-1/5 bg-black'></div>
           <div className='stairing h-full w-1/5 bg-black'></div>
@@ -139,7 +150,7 @@ const FullScreenNav = () => {
         </div>
         
         <div onClick={() => handleMenuClick("/agence")} className='link origin-top relative  border-t-1 border-white'>
-            <h1 className='font-[font2] lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] lg:pt-5 pt-1 text-center'>Agence</h1>
+            <h1 className='font-[font2] cursor-pointer lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] lg:pt-5 pt-1 text-center'>Agence</h1>
              <div className='moveLink absolute flex top-0 bg-[#D3FD50] text-black'>
                 <div className='flex moveX items-center'> 
                 <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center'>&nbsp; Pour Tout  Voir &nbsp;</h2>
@@ -157,7 +168,7 @@ const FullScreenNav = () => {
             </div>
         </div>
         <div onClick={() => handleMenuClick("/contact")}className='link origin-top relative  border-t-1 border-white'>
-            <h1 className='font-[font2] lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] lg:pt-5 pt-1 text-center'>contact</h1>
+            <h1 className='font-[font2] cursor-pointer lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] lg:pt-5 pt-1 text-center'>contact</h1>
              <div className='moveLink absolute flex top-0 bg-[#D3FD50] text-black'>
                 <div className='flex moveX items-center'> 
                 <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center'>&nbsp; Pour Tout  Voir &nbsp;</h2>
@@ -175,7 +186,7 @@ const FullScreenNav = () => {
             </div>
         </div>
         <div className='link origin-top relative  border-y-1 border-white'>
-            <h1 className='font-[font2] lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] lg:pt-5 pt-1 text-center'>Blogue</h1>
+            <h1 className='font-[font2] pointer-events-auto lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] lg:pt-5 pt-1 text-center'>Blogue</h1>
              <div className='moveLink absolute flex top-0 bg-[#D3FD50] text-black'>
                 <div className='flex moveX items-center'> 
                 <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center'>&nbsp; Pour Tout  Voir &nbsp;</h2>
