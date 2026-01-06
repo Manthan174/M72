@@ -118,7 +118,7 @@ const Agence = () => {
           </div>
             <Link to='/contact'>
           <button 
-            className="border-2 border-white rounded-full lg:px-10 px-12 py-4 lg:py-4 ml-6  text-3xl font-semibold
+            className="border-2 border-white rounded-full lg:px-10 px-12 py-4 lg:py-4 ml-2text-3xl font-semibold
                        hover:bg-white hover:text-black transition-all duration-300"
           >
             CONTACT <span className="ml-2">♥</span>

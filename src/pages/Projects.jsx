@@ -32,10 +32,7 @@ export default function Projects() {
       image1: 'https://k72.ca/images/caseStudies/Opto_Reseau_Brand/opto_thumbnail2.jpg?w=1280&h=960&s=7f23d7d824eb04c784dcf51380fe3996',
       image2: 'https://k72.ca/images/caseStudies/OKA/OKA_thumbnail.jpg?w=1280&h=960&s=c12c27c9db3c521e4c82a246a8d5c022',
     },
-    {
-      image1: 'https://k72.ca/images/caseStudies/Opto/thumbnailimage_opto.jpg?w=1280&h=960&s=938f0bfb3de1ff2a2846b884eec2d757',
-      image2: 'https://th.bing.com/th/id/OIP.nY2Fa57Qot38DS0iuFcs8QHaD9?w=292&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
-    },
+   
   ]
   const [time, setTime] = useState('')
 
@@ -117,7 +114,7 @@ useEffect(() => {
           </div>
             <Link to='/contact'>
           <button
-            className="border-2 border-white rounded-full lg:px-10 px-12 py-4 lg:py-4 ml-6  text-3xl font-semibold
+            className="border-2 border-white rounded-full lg:px-10 px-12 py-4 lg:py-4 ml-2 text-3xl font-semibold
                        hover:bg-white hover:text-black transition-all duration-300"
           >
             CONTACT <span className="ml-2">♥</span>
@@ -125,7 +122,7 @@ useEffect(() => {
           </Link>
         </div>
 
-        <div className="mt-16 flex items-center justify-between text-sm flex-wrap gap-4">
+        <div className="mt-16 flex items-center justify-between text-sm flex-wrap gap-4 ">
           <div className="lg:flex lg:items-center lg:gap-2 lg:ml-0 ml-21">
             🌐 <span>MONTREAL_{time}</span>
           </div>

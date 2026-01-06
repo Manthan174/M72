@@ -1,4 +1,5 @@
 import React from "react";
+import Video1 from '/video.mp4'
 
 const Video = () => {
   return (
@@ -9,7 +10,7 @@ const Video = () => {
         loop
         muted
         playsInline
-        src="/video.mp4"
+        src={Video1}
       ></video>
     </div>
   );

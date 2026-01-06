@@ -15,5 +15,5 @@ createRoot(document.getElementById('root')).render(
     </NavContaxt>
     </Stair>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
