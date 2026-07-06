@@ -6,6 +6,7 @@ import Projects from './pages/Projects'
 import Navbar from './navigation/Navbar.jsx'
 import FullScreenNav from './navigation/FullScreenNav.jsx'
 import Contact from './component/contact/Contact.jsx'
+import Stair from './component/common/Stair.jsx'
 
 const App = () => { 
 
@@ -15,15 +16,18 @@ const App = () => {
         <Navbar/>
         <FullScreenNav/>
         
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/agence' element={<Agence />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/contact' element={<Contact/>} />
-        </Routes>
+        <Stair>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/agence' element={<Agence />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/contact' element={<Contact/>} />
+          </Routes>
+        </Stair>
       </div>
     
   )
 }
 
 export default App
+

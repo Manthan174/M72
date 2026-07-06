@@ -98,7 +98,7 @@ const FullScreenNav = () => {
     <div
       ref={fullScreenRef}
       id="fullscreenav"
-      className="fullscreennav z-50  text-white h-screen  w-full fixed inset-0"
+      className="fullscreennav z-50 text-white h-screen w-full fixed inset-0"
     >
       <div className="h-screen w-full fixed overflow-hidden inset-0 ">
         <div className="h-full w-full flex">
@@ -109,10 +109,10 @@ const FullScreenNav = () => {
           <div className="stairing h-full w-1/5 bg-black"></div>
         </div>
       </div>
-      <div className="relative">
-        <div className="navlink flex w-full justify-between items-start lg:p-2 p-2">
-          <div className="">
-            <div onClick={() => handleMenuClick("/")} className="w-29">
+      <div className="relative h-full w-full flex flex-col justify-between p-6 lg:p-10 z-10">
+        <div className="navlink flex w-full justify-between items-start">
+          <div>
+            <div onClick={() => handleMenuClick("/")} className="w-29 cursor-pointer">
               <svg
                 className="w-full"
                 xmlns="http://www.w3.org/2000/svg"
@@ -125,37 +125,39 @@ const FullScreenNav = () => {
                 ></path>
               </svg>
             </div>
-
-            <div className="absolute lg:mt-7 mt-22 ">
-              <h6 className="flex lg:h-[2vw] lg:w-[12vw] h-[10vw] w-[55vw] text-[#D3FD50]">
-                Double click on {" "}
-                <div className="text-center ml-1 mt-1">
+            <div className="absolute mt-4">
+              <h6 className="flex items-center gap-1 text-[#D3FD50] text-[3.5vw] lg:text-[1vw]">
+                Double click on
+                <div className="animate-bounce">
                   <IoArrowDownOutline />
                 </div>
               </h6>
             </div>
           </div>
+          {/* Responsive Close Button */}
           <div
             onClick={() => {
               setNavOpen(false);
             }}
-            className="lg:h-28 lg:w-28 h-24 w-24 relative cursor-pointer "
+            className="lg:h-16 lg:w-16 h-12 w-12 flex items-center justify-center relative cursor-pointer group"
           >
-            <div className="lg:h-40 h-34 lg:w-0.5 w-0.5 -rotate-45 origin-top bg-[#D3FD50] absolute"></div>
-            <div className="lg:h-40 h-34 lg:w-0.5 w-0.5 rotate-45 origin-top right-0 bg-[#D3FD50] absolute"></div>
+            <div className="absolute w-full h-[2px] bg-[#D3FD50] rotate-45 transition-transform duration-300 group-hover:scale-x-110"></div>
+            <div className="absolute w-full h-[2px] bg-[#D3FD50] -rotate-45 transition-transform duration-300 group-hover:scale-x-110"></div>
           </div>
         </div>
-        <div id="all-links" className=" lg:py-2 lg:py-1 py-20">
+
+        <div id="all-links" className="w-full flex flex-col justify-center flex-grow py-10">
+          {/* Projects Link */}
           <div
             onClick={() => handleMenuClick("/projects")}
-            className="link z-20 origin-top relative cursor-pointer border-t-1 border-white"
+            className="link z-20 origin-top relative cursor-pointer border-t border-white/30 w-full"
           >
-            <h1 className="font-[font2] cursor-pointer lg:text-[8vw] text-5xl uppercase z-10 lg:leading-[0.8] lg:pt-5 pt-1 text-center">
+            <h1 className="font-[font2] relative z-10 cursor-pointer lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] py-4 text-center">
               Projets
             </h1>
-            <div className="moveLink pointer-events-none absolute flex top-0 bg-[#D3FD50] text-black">
+            <div className="moveLink pointer-events-none absolute inset-0 w-full h-full bg-[#D3FD50] text-black flex items-center overflow-hidden z-20">
               <div className="flex moveX items-center">
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -163,7 +165,7 @@ const FullScreenNav = () => {
                   src="https://k72.ca/images/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290.jpg?w=640&h=290&s=ac50a70feaaa2601b3aacad544c6045b"
                   alt="pic1"
                 />
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -173,7 +175,7 @@ const FullScreenNav = () => {
                 />
               </div>
               <div className="flex moveX items-center">
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -181,7 +183,7 @@ const FullScreenNav = () => {
                   src="https://k72.ca/images/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290.jpg?w=640&h=290&s=ac50a70feaaa2601b3aacad544c6045b"
                   alt="pic1"
                 />
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -193,16 +195,17 @@ const FullScreenNav = () => {
             </div>
           </div>
 
+          {/* Agence Link */}
           <div
             onClick={() => handleMenuClick("/agence")}
-            className="link origin-top relative  border-t-1 border-white"
+            className="link origin-top relative border-t border-white/30 w-full"
           >
-            <h1 className="font-[font2] cursor-pointer lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] lg:pt-5 pt-1 text-center">
+            <h1 className="font-[font2] relative z-10 cursor-pointer lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] py-4 text-center">
               Agence
             </h1>
-            <div className="moveLink pointer-events-none absolute flex top-0 bg-[#D3FD50] text-black">
+            <div className="moveLink pointer-events-none absolute inset-0 w-full h-full bg-[#D3FD50] text-black flex items-center overflow-hidden z-20">
               <div className="flex moveX items-center">
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -210,7 +213,7 @@ const FullScreenNav = () => {
                   src="https://k72.ca/images/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290.jpg?w=640&h=290&s=ac50a70feaaa2601b3aacad544c6045b"
                   alt="pic1"
                 />
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -220,7 +223,7 @@ const FullScreenNav = () => {
                 />
               </div>
               <div className="flex moveX items-center">
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -228,7 +231,7 @@ const FullScreenNav = () => {
                   src="https://k72.ca/images/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290.jpg?w=640&h=290&s=ac50a70feaaa2601b3aacad544c6045b"
                   alt="pic1"
                 />
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -239,16 +242,18 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
+
+          {/* Contact Link */}
           <div
             onClick={() => handleMenuClick("/contact")}
-            className="link origin-top relative  border-t-1 border-white"
+            className="link origin-top relative border-t border-white/30 w-full"
           >
-            <h1 className="font-[font2] cursor-pointer lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] lg:pt-5 pt-1 text-center">
-              contact
+            <h1 className="font-[font2] relative z-10 cursor-pointer lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] py-4 text-center">
+              Contact
             </h1>
-            <div className="moveLink pointer-events-none absolute flex top-0 bg-[#D3FD50] text-black">
+            <div className="moveLink pointer-events-none absolute inset-0 w-full h-full bg-[#D3FD50] text-black flex items-center overflow-hidden z-20">
               <div className="flex moveX items-center">
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -256,7 +261,7 @@ const FullScreenNav = () => {
                   src="https://k72.ca/images/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290.jpg?w=640&h=290&s=ac50a70feaaa2601b3aacad544c6045b"
                   alt="pic1"
                 />
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -266,7 +271,7 @@ const FullScreenNav = () => {
                 />
               </div>
               <div className="flex moveX items-center">
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -274,7 +279,7 @@ const FullScreenNav = () => {
                   src="https://k72.ca/images/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290.jpg?w=640&h=290&s=ac50a70feaaa2601b3aacad544c6045b"
                   alt="pic1"
                 />
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -285,13 +290,15 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
-          <div className="link origin-top relative  border-y-1 border-white">
-            <h1 className="font-[font2] lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] lg:pt-5 pt-1 text-center">
+
+          {/* Blogue Link */}
+          <div className="link origin-top relative border-y border-white/30 w-full">
+            <h1 className="font-[font2] relative z-10 lg:text-[8vw] text-5xl uppercase lg:leading-[0.8] py-4 text-center">
               Blogue
             </h1>
-            <div className="moveLink pointer-events-none absolute flex top-0 bg-[#D3FD50] text-black">
+            <div className="moveLink pointer-events-none absolute inset-0 w-full h-full bg-[#D3FD50] text-black flex items-center overflow-hidden z-20">
               <div className="flex moveX items-center">
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -299,7 +306,7 @@ const FullScreenNav = () => {
                   src="https://k72.ca/images/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290.jpg?w=640&h=290&s=ac50a70feaaa2601b3aacad544c6045b"
                   alt="pic1"
                 />
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -309,7 +316,7 @@ const FullScreenNav = () => {
                 />
               </div>
               <div className="flex moveX items-center">
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -317,7 +324,7 @@ const FullScreenNav = () => {
                   src="https://k72.ca/images/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290.jpg?w=640&h=290&s=ac50a70feaaa2601b3aacad544c6045b"
                   alt="pic1"
                 />
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] lg:pt-5 pt-2 text-center">
+                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-4xl uppercase lg:leading-[0.8] pt-2 text-center">
                   &nbsp; Pour Tout Voir &nbsp;
                 </h2>
                 <img
@@ -330,6 +337,7 @@ const FullScreenNav = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

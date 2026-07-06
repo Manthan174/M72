@@ -5,18 +5,23 @@ import HomeBottomText from '../component/home/HomeBottomText'
 
 const Home = () => {
   return (
-    <div className='text-white h-screen w-screen'>
-    <div className='h-full w-full fixed'>
-      <Video/>
-    </div>
+    <div className='relative h-screen w-screen text-white overflow-hidden bg-black select-none'>
+      {/* Background Video */}
+      <div className='absolute inset-0 w-full h-full z-0 pointer-events-none'>
+        <Video/>
+      </div>
 
-    <div className='h-screen  w-screen lg:h-full lg:w-full pb-2 overflow-hidden relative flex flex-col justify-between'>
+      {/* Main Content Layout */}
+      <div className='relative z-10 h-full w-full flex flex-col justify-between p-6 lg:p-10'>
+        {/* Header spacer to avoid clashing with fixed Navbar */}
+        <div className='h-16 lg:h-24'></div>
+
         <HomeHeroText/>
         <HomeBottomText/>
-    </div>
-
+      </div>
     </div>
   )
 }
 
 export default Home
+

@@ -3,17 +3,15 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
-import Stair from './component/common/Stair.jsx'
 import NavContaxt from './contaxt/NavContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <Stair>
     <NavContaxt>
       <App />
     </NavContaxt>
-    </Stair>
     </BrowserRouter>
   </StrictMode>
 )
+

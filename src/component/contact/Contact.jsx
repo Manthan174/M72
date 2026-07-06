@@ -7,101 +7,103 @@ import { FaCanadianMapleLeaf } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { SiGooglemaps } from "react-icons/si";
 
-
-
 const Contact = () => {
-  const rowsRef = useRef([]);
+  const containerRef = useRef(null);
 
   useGSAP(() => {
-    rowsRef.current.forEach((row, index) => {
-      const distance = row.scrollWidth / 2;
-
-      gsap.fromTo(
-        row,
-        { x: 0 },
-        {
-          x: index % 2 === 0 ? -distance : distance,
-          duration: 25,
-          ease: "none",
-          repeat: -1,
-          modifiers: {
-            x: (x) => `${parseFloat(x) % distance}px`,
-          },
-        }
-      );
+    // Entrance animation for header
+    gsap.from(".contact-header", {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out"
     });
-  }, []);
+
+    // Entrance animation for details
+    gsap.from(".contact-info", {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      delay: 0.4,
+      stagger: 0.1,
+      ease: "power3.out"
+    });
+  }, { scope: containerRef });
 
   return (
-    <section className="min-h-screen bg-black text-white overflow-hidden font-[font1]">
-      
-     
-      <div className="px-6 pt-24 pb-15 font-[font1]">
-        <h1 className="uppercase font- leading-[0.85] text-center
-          text-[12vw] md:text-[8vw]">
+    <section ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden font-[font1] select-none flex flex-col justify-between pt-24">
+      {/* Title & Description Container */}
+      <div className="px-6 md:px-12 flex flex-col items-center md:items-start text-center md:text-left">
+        <h1 className="contact-header uppercase leading-[0.9] text-[12vw] md:text-[8vw] font-bold">
           Pour <br/>Parler De
           <br /> Votre
           <br />Projet
         </h1>
 
-        <p className="mt-6 text-sm md:text-base opacity-70 font-[font1] lg:text-left text-center">
+        <p className="contact-info mt-6 text-sm md:text-base opacity-70 max-w-sm">
           Dans un écran ou un bureau.<br />
           Chez vous. Chez nous. Partout.
         </p>
-        <a
-  href="https://www.google.com/maps?q=525+Av.+Viger+O,+Montréal,+QC+H2Z+1G6,+Canada"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-sm opacity-70 hover:opacity-100 transition-opacity hover:text-[#D3FD50]
-  text-sm  hover:underline underline-offset-4 lg:right-2  fixed lg:bottom-111 lg:gap-2 
-  lg:pt-0 pt-3.5 lg:text-center text-center inline-flex"
->
-  <SiGooglemaps/>525 Av. Viger O, Montréal, QC H2Z 1G6, Canada
-</a>
-
       </div>
 
-      <div className="border-t border-white overflow-hidden">
-        {[0].map((_, i) => (
-          <div
-            key={i}
-            className="relative w-full overflow-hidden"
+      {/* Infinte CSS Marquee */}
+      <div className="border-t border-b border-white/20 overflow-hidden w-full flex my-10">
+        <div className="flex moveX items-center whitespace-nowrap py-4 text-[10vw] md:text-[6vw] uppercase font-bold font-[font1]">
+          {[...Array(4)].map((_, index) => (
+            <span key={index} className="flex items-center gap-3 lg:gap-6 lg:text-[7vw] text-4xl mx-4">
+              Manthan@M72.ca
+              <img
+                src={Logo}
+                alt="Logo"
+                className="w-24 h-12 md:w-56 md:h-28 rounded-full object-cover shrink-0"
+              />
+            </span>
+          ))}
+        </div>
+        <div className="flex moveX items-center whitespace-nowrap py-4 text-[10vw] md:text-[6vw] uppercase font-bold font-[font1]">
+          {[...Array(4)].map((_, index) => (
+            <span key={index} className="flex items-center gap-3 lg:gap-6 lg:text-[7vw] text-4xl mx-4">
+              Manthan@M72.ca
+              <img
+                src={Logo}
+                alt="Logo"
+                className="w-24 h-12 md:w-56 md:h-28 rounded-full object-cover shrink-0"
+              />
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Info Details Container */}
+      <div className="px-6 md:px-12 pb-16 text-sm md:text-base opacity-80 flex flex-col gap-3 max-w-xl self-center md:self-start">
+        <p className="contact-info flex items-center justify-center md:justify-start gap-3">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=manthansuhagiya028@gmail.com" className="hover:text-[#D3FD50] transition-colors flex items-center gap-2">
+            <SiGmail className="text-lg" /> MANTHAN@M72.ca
+          </a>
+        </p>
+        <p className="contact-info flex items-center justify-center md:justify-start gap-3">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=manthansuhagiya028@gmail.com" className="hover:text-[#D3FD50] transition-colors flex items-center gap-2">
+            <SiGmail className="text-lg" /> Manthansuhagiya028@gmail.com
+          </a>
+        </p>
+        <p className="contact-info flex items-center justify-center md:justify-start gap-3">
+          <a href="tel:+917990657232" className="hover:text-[#D3FD50] transition-colors flex items-center gap-2">
+            <BsTelephone className="text-lg" /> +91 79906 57237
+          </a>
+        </p>
+        <p className="contact-info flex items-center justify-center md:justify-start gap-3 hover:text-[#D3FD50] transition-colors">
+          <FaCanadianMapleLeaf className="text-lg text-red-500" /> Montréal, Canada
+        </p>
+        <p className="contact-info flex items-center justify-center md:justify-start gap-3 mt-2">
+          <a
+            href="https://www.google.com/maps?q=525+Av.+Viger+O,+Montréal,+QC+H2Z+1G6,+Canada"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#D3FD50] hover:underline underline-offset-4 flex items-center gap-2"
           >
-            <div
-              ref={(el) => (rowsRef.current[i] = el)}
-              className="flex w-max items-center whitespace-nowrap gap-1 py-6
-                text-[10vw] md:text-[6vw] uppercase font-bold font-[font1] "
-            >
-              {[...Array(2)].map((_, dup) =>
-                Array(4)
-                  .fill("Manthan@M72.ca")
-                  .map((text, index) => (
-                    <span
-                      key={`${dup}-${index}`}
-                      className="flex items-center lg:gap-3 gap-1 lg:text-[8vw] text-4xl"
-                    >
-                      {text}
-                      <img
-                        src={Logo}
-                        alt=""
-                        className="w-32 h-15 rounded-all object-cover md:w-60 md:h-36 object-cover rounded-full object-cover"
-                      />
-                    </span>
-                  ))
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="px-6 py-14 text-sm opacity-70">
-        <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=manthansuhagiya028@gmail.com" className="opacity-100 hover:opacity-70 inline-flex"><SiGmail/>&nbsp;&nbsp;MANTHAN@M72.ca</a></p>
-        <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=manthansuhagiya028@gmail.com" className="opacity-100 hover:opacity-70 inline-flex"><SiGmail/>&nbsp;&nbsp;Manthansuhagiya028@gmail.com</a></p>
-        <p><a href="tel:+917990657232"
-        className="opacity-100 hover:opacity-70 transition-opacity flex"
-        ><BsTelephone />&nbsp;&nbsp;+91 79906 57237
-          </a></p>
-        <p className="inline-flex"><FaCanadianMapleLeaf />&nbsp;&nbsp;Montréal, Canada</p>
+            <SiGooglemaps className="text-lg text-green-500" /> 525 Av. Viger O, Montréal, QC H2Z 1G6, Canada
+          </a>
+        </p>
       </div>
     </section>
   );

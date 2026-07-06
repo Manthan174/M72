@@ -62,39 +62,56 @@ useEffect(() => {
   gsap.registerPlugin(ScrollTrigger)
 
   useGSAP(() => {
-    gsap.from('.hero', {
-      height: '100px',
-      stagger: { amount: 0.4 },
-      scrollTrigger: {
-        trigger: '.lol',
-        start: 'top 100%',
-        end: 'top -150%',
-        scrub: true,
-      },
-    })
+    // Title entrance animation
+    gsap.from(".projects-title", {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out"
+    });
+
+    // Row scroll reveal trigger
+    const rows = gsap.utils.toArray('.hero');
+    rows.forEach((row) => {
+      gsap.fromTo(row, 
+        { opacity: 0, y: 60, scale: 0.98 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: row,
+            start: "top 88%", // triggers when row top is near the bottom viewport edge
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
   })
 
   return (
     <>
-    
-      <div className="lg:p-2 p-1">
-        <div className="pt-[41vh]">
-          <h2 className="flex font-[font2] lg:text-[13vw] text-[20vw] uppercase">
-            Projets <div className=' lg:text-[4vw] lg:mt-13 text-[6vw] mt-3'><sup className='lg:leading-tight'>17</sup></div>
+      <div className="px-4 lg:px-8 pt-[25vh] lg:pt-[35vh]">
+        <div>
+          <h2 className="projects-title flex font-[font2] lg:text-[13vw] text-[18vw] uppercase leading-none select-none">
+            Projets <div className='lg:text-[3vw] lg:mt-10 text-[5vw] mt-2'><sup className='lg:leading-tight'>17</sup></div>
           </h2>
         </div>
 
-        <div className="lol lg:-mt-19 -mt-6">
+        <div className="lol mt-10 lg:mt-16 pb-20">
           {projects.map((elem, idx) => (
             <div
               key={idx}
-              className="hero w-full h-[500px] flex lg:flex-row flex-col mb-2 gap-2"
+              className="hero w-full h-auto lg:h-[500px] flex lg:flex-row flex-col mb-6 lg:mb-3 gap-6 lg:gap-3"
             >
               <ProjectsCard image1={elem.image1} image2={elem.image2} />
             </div>
           ))}
         </div>
       </div>
+
 
     
       <footer className="bg-black  text-white lg:px-8  pt-10 lg:pb-6 pb-2">
