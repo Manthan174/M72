@@ -114,49 +114,48 @@ useEffect(() => {
 
 
     
-      <footer className="bg-black  text-white lg:px-8  pt-10 lg:pb-6 pb-2">
-      
-        <div className="flex items-center justify-between flex-wrap gap-6">
-          <div className="flex gap-4 px-2">
+      <footer className="bg-black text-white lg:px-12 pt-16 pb-6 border-t border-white/10 relative z-10">
+        <div className="flex items-center justify-between flex-wrap gap-6 px-4">
+          <div className="flex gap-4">
             {['FB', 'IG', 'IN', 'BE'].map((item) => (
               <div
                 key={item}
-                className="w-16 h-16 border-2 border-white rounded-full flex items-center justify-center
-                           text-xl font-semibold cursor-pointer
-                           hover:bg-white hover:text-black transition-all duration-300"
+                className="w-12 h-12 lg:w-16 lg:h-16 border border-white/40 rounded-full flex items-center justify-center
+                           text-base lg:text-xl font-semibold cursor-pointer
+                           hover:bg-white hover:text-black hover:border-white transition-all duration-300"
               >
                 {item}
               </div>
             ))}
           </div>
-            <Link to='/contact'>
-          <button
-            className="border-2 border-white rounded-full lg:px-10 px-12 py-4 lg:py-4 ml-2 text-3xl font-semibold
-                       hover:bg-white hover:text-black transition-all duration-300"
-          >
-            CONTACT <span className="ml-2">♥</span>
-          </button>
+          <Link to='/contact'>
+            <button 
+              className="border border-white/40 rounded-full px-8 py-3 lg:px-10 lg:py-4 text-base lg:text-xl font-semibold
+                         hover:bg-white hover:text-black hover:border-white transition-all duration-300"
+            >
+              CONTACT <span className="ml-2">♥</span>
+            </button>
           </Link>
         </div>
 
-        <div className="mt-16 flex items-center justify-between text-sm flex-wrap gap-4 ">
-          <div className="lg:flex lg:items-center lg:gap-2 lg:ml-0 ml-21">
-            🌐 <span>MONTREAL_{time}</span>
+        <div className="mt-16 flex items-center justify-between text-xs lg:text-sm flex-wrap gap-6 border-t border-white/10 pt-8 px-4">
+          <div className="flex items-center gap-2">
+            🌐 <span className="tracking-wide">MONTREAL_{time}</span>
           </div>
 
-          <div className="lg:flex lg:flex-wrap lg:justify-center lg:gap-4 lg:text-center
-                           grid 
-          ">
-            <a href="#" className="hover:underline">POLITIQUE DE CONFIDENTIALITÉ</a>
-            <a href="#" className="hover:underline">AVIS DE CONFIDENTIALITÉ</a>
-            <a href="#" className="hover:underline">RAPPORT ÉTHIQUE</a>
-            <a href="#" className="hover:underline">OPTIONS DE CONSENTEMENT</a>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] lg:text-xs opacity-60">
+            <a href="#" className="hover:text-[#D3FD50] transition-colors">POLITIQUE DE CONFIDENTIALITÉ</a>
+            <a href="#" className="hover:text-[#D3FD50] transition-colors">AVIS DE CONFIDENTIALITÉ</a>
+            <a href="#" className="hover:text-[#D3FD50] transition-colors">RAPPORT ÉTHIQUE</a>
+            <a href="#" className="hover:text-[#D3FD50] transition-colors">OPTIONS DE CONSENTEMENT</a>
           </div>
 
-          <a href="#" className="hover:underline lg:text-[] text-[2.3vh] lg:ml-0 ml-25 font-semibold">
-            RETOUR EN HAUT
-          </a>
-    
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="hover:text-[#D3FD50] transition-colors font-semibold uppercase tracking-wider"
+          >
+            RETOUR EN HAUT ↑
+          </button>
         </div>
       </footer>
     </>

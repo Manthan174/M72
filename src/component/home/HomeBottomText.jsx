@@ -36,7 +36,7 @@ const HomeBottomText = () => {
       duration: 1.2,
       stagger: 0.15,
       ease: "power3.out",
-      delay: 0.6
+      delay: 1.2
     })
   }, { scope: containerRef })
 
@@ -63,7 +63,7 @@ const HomeBottomText = () => {
 
       {/* Description text - Right on Desktop */}
       <p className='bottom-fade-in order-1 lg:order-3 text-[3.8vw] lg:text-[1vw] w-full max-w-[320px] lg:w-80 leading-relaxed text-center lg:text-right opacity-80'>
-        K72 est une agence qui pense chaque action pour nourrir la marque. Demain, dans 5 mois et dans 5 ans. On cherche la friction qui crée l’étincelle pour générer de l’émotion. Pour assurer une relation honnête, on est sans filtre.
+        M72 est une agence qui pense chaque action pour nourrir la marque. Demain, dans 5 mois et dans 5 ans. On cherche la friction qui crée l’étincelle pour générer de l’émotion. Pour assurer une relation honnête, on est sans filtre.
       </p>
     </div>
   )

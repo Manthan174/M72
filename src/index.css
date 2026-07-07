@@ -22,8 +22,10 @@
   transition: all ease 0.3s;
 }
 
-.link:hover .moveLink{
-  opacity: 1;
+@media (hover: hover) {
+  .link:hover .moveLink{
+    opacity: 1;
+  }
 }
 
 @keyframes moveAnimation {

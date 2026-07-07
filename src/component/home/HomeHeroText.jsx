@@ -9,12 +9,13 @@ const HomeHeroText = () => {
   useGSAP(() => {
     const tl = gsap.timeline();
     
-    // Animate lines rising
+    // Animate lines rising after the curtain transition starts revealing
     tl.from(".hero-line-inner", {
       y: "115%",
       duration: 1.4,
       stagger: 0.15,
       ease: "power4.out",
+      delay: 0.8
     });
 
     // Animate the capsule expanding
