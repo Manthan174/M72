@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Logo from '../../assets/Logo.png'
@@ -7,7 +6,7 @@ import { SiGmail } from "react-icons/si";
 import { FaCanadianMapleLeaf } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { SiGooglemaps } from "react-icons/si";
-import Footer from '../component/common/Footer';
+import Footer from '../common/Footer';
 
 const Contact = () => {
   const containerRef = useRef(null);
@@ -33,16 +32,16 @@ const Contact = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden font-[font1] select-none flex flex-col justify-between pt-24">
+    <section ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden font-[font1] select-none flex flex-col justify-between pt-28 lg:pt-36">
       {/* Title & Description Container */}
       <div className="px-6 md:px-12 flex flex-col items-center md:items-start text-center md:text-left">
-        <h1 className="contact-header uppercase leading-[0.9] text-[12vw] md:text-[8vw] font-bold">
+        <h1 className="contact-header uppercase leading-[0.9] text-[14vw] md:text-7xl lg:text-8xl xl:text-9xl font-bold">
           Pour <br/>Parler De
           <br /> Votre
           <br />Projet
         </h1>
 
-        <p className="contact-info mt-6 text-sm md:text-base opacity-70 max-w-sm">
+        <p className="contact-info mt-6 text-base md:text-lg lg:text-xl opacity-70 max-w-md lg:max-w-lg">
           Dans un écran ou un bureau.<br />
           Chez vous. Chez nous. Partout.
         </p>
@@ -50,26 +49,26 @@ const Contact = () => {
 
       {/* Infinite CSS Marquee */}
       <div className="border-y border-white/20 overflow-hidden w-full flex my-10 group hover:bg-[#D3FD50] hover:text-black transition-colors duration-700 cursor-pointer">
-        <div className="flex shrink-0 moveX items-center whitespace-nowrap py-4 text-[10vw] md:text-[6vw] uppercase font-bold font-[font1]">
+        <div className="flex shrink-0 moveX items-center whitespace-nowrap py-4 text-[12vw] md:text-6xl lg:text-8xl uppercase font-bold font-[font1]">
           {[...Array(4)].map((_, index) => (
-            <span key={index} className="flex items-center gap-3 lg:gap-6 lg:text-[7vw] text-4xl mx-4">
+            <span key={index} className="flex items-center gap-3 lg:gap-8 mx-4 md:mx-8">
               Manthan@M72.ca
               <img
                 src={Logo}
                 alt="Logo"
-                className="w-24 h-12 md:w-56 md:h-28 rounded-full object-cover shrink-0 filter drop-shadow-md"
+                className="w-24 h-12 md:w-48 md:h-24 lg:w-64 lg:h-32 rounded-full object-cover shrink-0 filter drop-shadow-md"
               />
             </span>
           ))}
         </div>
-        <div className="flex shrink-0 moveX items-center whitespace-nowrap py-4 text-[10vw] md:text-[6vw] uppercase font-bold font-[font1]">
+        <div className="flex shrink-0 moveX items-center whitespace-nowrap py-4 text-[12vw] md:text-6xl lg:text-8xl uppercase font-bold font-[font1]">
           {[...Array(4)].map((_, index) => (
-            <span key={index} className="flex items-center gap-3 lg:gap-6 lg:text-[7vw] text-4xl mx-4">
+            <span key={index} className="flex items-center gap-3 lg:gap-8 mx-4 md:mx-8">
               Manthan@M72.ca
               <img
                 src={Logo}
                 alt="Logo"
-                className="w-24 h-12 md:w-56 md:h-28 rounded-full object-cover shrink-0 filter drop-shadow-md"
+                className="w-24 h-12 md:w-48 md:h-24 lg:w-64 lg:h-32 rounded-full object-cover shrink-0 filter drop-shadow-md"
               />
             </span>
           ))}
@@ -77,7 +76,7 @@ const Contact = () => {
       </div>
 
       {/* Info Details Container */}
-      <div className="px-6 md:px-12 pb-16 text-sm md:text-base opacity-80 flex flex-col gap-3 max-w-xl self-center md:self-start">
+      <div className="px-6 md:px-12 pb-16 text-base md:text-lg lg:text-xl opacity-80 flex flex-col gap-4 max-w-2xl self-center md:self-start">
         <p className="contact-info flex items-center justify-center md:justify-start gap-3">
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=manthansuhagiya028@gmail.com" className="hover:text-[#D3FD50] transition-colors flex items-center gap-2">
             <SiGmail className="text-lg" /> MANTHAN@M72.ca
