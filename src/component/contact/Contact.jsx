@@ -6,6 +6,7 @@ import { SiGmail } from "react-icons/si";
 import { FaCanadianMapleLeaf } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { SiGooglemaps } from "react-icons/si";
+import { FaInstagram, FaFacebookF, FaXTwitter } from "react-icons/fa6";
 import Footer from '../common/Footer';
 
 const Contact = () => {
@@ -105,6 +106,19 @@ const Contact = () => {
             <SiGooglemaps className="text-lg text-green-500" /> 525 Av. Viger O, Montréal, QC H2Z 1G6, Canada
           </a>
         </p>
+
+        {/* Social Links */}
+        <div className="contact-info flex items-center justify-center md:justify-start gap-8 mt-8">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-[#D3FD50] hover:scale-110 transition-all duration-300">
+            <FaInstagram className="text-3xl lg:text-4xl" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-[#D3FD50] hover:scale-110 transition-all duration-300">
+            <FaFacebookF className="text-3xl lg:text-4xl" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-[#D3FD50] hover:scale-110 transition-all duration-300">
+            <FaXTwitter className="text-3xl lg:text-4xl" />
+          </a>
+        </div>
       </div>
 
       <Footer />
