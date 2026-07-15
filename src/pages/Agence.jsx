@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Link } from "react-router-dom";
+import Footer from "../component/common/Footer";
 
 const Agence = () => {
     gsap.registerPlugin(ScrollTrigger)
@@ -62,27 +63,7 @@ const Agence = () => {
       }
     ];
 
-    const [activeIndex, setActiveIndex] = useState(0)
-    const [time, setTime] = useState('')
-      
-    useEffect(() => {
-      const updateTime = () => {
-        const now = new Date()
-        const options = {
-          timeZone: 'America/Toronto', 
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        }
-        const formattedTime = now.toLocaleTimeString('en-CA', options)
-        setTime(formattedTime)
-      }
-    
-      updateTime() 
-      const interval = setInterval(updateTime, 1000)
-      return () => clearInterval(interval)
-    }, [])
+    const [activeIndex, setActiveIndex] = useState(0);
 
     useGSAP(function(){
         // Title entrance reveal
@@ -148,7 +129,7 @@ const Agence = () => {
           <div className="h-16 lg:h-24"></div>
           <div className="relative font-[font2] z-10 my-auto">
             <div>
-              <h1 className="intro-title lg:text-[18vw] text-[14vw] text-center uppercase lg:leading-[16vw] leading-[12vw] tracking-tighter text-black">
+              <h1 className="intro-title lg:text-[14vw] text-[16vw] text-center uppercase lg:leading-[12vw] leading-[14vw] tracking-tighter text-black drop-shadow-sm">
                 Soixan7e <br />Douze
               </h1>
             </div>
@@ -207,10 +188,10 @@ const Agence = () => {
              <div 
                img-wrapper-id="img-wrapper"
                ref={imgWrapperRef} 
-               className="relative lg:w-[22vw] lg:h-[30vw] w-[45vw] h-[60vw] max-h-[380px] lg:max-h-[480px] rounded-2xl lg:rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.06)] border border-black/10"
+               className="relative lg:w-[22vw] lg:h-[30vw] w-[45vw] h-[60vw] max-h-[380px] lg:max-h-[480px] rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-black/10 group transition-transform duration-500 hover:-translate-y-2"
              >
                <img 
-                 className="w-full h-full object-cover select-none"
+                 className="w-full h-full object-cover select-none transition-transform duration-700 group-hover:scale-105"
                  src={teamMembers[activeIndex]?.image} 
                  alt={teamMembers[activeIndex]?.name} 
                />
@@ -226,51 +207,7 @@ const Agence = () => {
          </div>
        </div>
 
-       {/* Footer */}
-       <footer className="bg-black text-white lg:px-12 pt-16 pb-6 border-t border-white/10 relative z-10">
-         <div className="flex items-center justify-between flex-wrap gap-6 px-4">
-           <div className="flex gap-4">
-             {['FB', 'IG', 'IN', 'BE'].map((item) => (
-               <div
-                 key={item}
-                 className="w-12 h-12 lg:w-16 lg:h-16 border border-white/40 rounded-full flex items-center justify-center
-                            text-base lg:text-xl font-semibold cursor-pointer
-                            hover:bg-white hover:text-black hover:border-white transition-all duration-300"
-               >
-                 {item}
-               </div>
-             ))}
-           </div>
-           <Link to='/contact'>
-             <button 
-               className="border border-white/40 rounded-full px-8 py-3 lg:px-10 lg:py-4 text-base lg:text-xl font-semibold
-                          hover:bg-white hover:text-black hover:border-white transition-all duration-300"
-             >
-               CONTACT <span className="ml-2">♥</span>
-             </button>
-           </Link>
-         </div>
-
-         <div className="mt-16 flex items-center justify-between text-xs lg:text-sm flex-wrap gap-6 border-t border-white/10 pt-8 px-4">
-           <div className="flex items-center gap-2">
-             🌐 <span className="tracking-wide">MONTREAL_{time}</span>
-           </div>
-
-           <div className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] lg:text-xs opacity-60">
-             <a href="#" className="hover:text-[#D3FD50] transition-colors">POLITIQUE DE CONFIDENTIALITÉ</a>
-             <a href="#" className="hover:text-[#D3FD50] transition-colors">AVIS DE CONFIDENTIALITÉ</a>
-             <a href="#" className="hover:text-[#D3FD50] transition-colors">RAPPORT ÉTHIQUE</a>
-             <a href="#" className="hover:text-[#D3FD50] transition-colors">OPTIONS DE CONSENTEMENT</a>
-           </div>
-
-           <button 
-             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-             className="hover:text-[#D3FD50] transition-colors font-semibold uppercase tracking-wider"
-           >
-             RETOUR EN HAUT ↑
-           </button>
-         </div>
-       </footer>
+       <Footer />
      </div>
     );
 };

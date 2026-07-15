@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Logo from '../../assets/Logo.png'
@@ -6,6 +7,7 @@ import { SiGmail } from "react-icons/si";
 import { FaCanadianMapleLeaf } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { SiGooglemaps } from "react-icons/si";
+import Footer from '../component/common/Footer';
 
 const Contact = () => {
   const containerRef = useRef(null);
@@ -46,28 +48,28 @@ const Contact = () => {
         </p>
       </div>
 
-      {/* Infinte CSS Marquee */}
-      <div className="border-t border-b border-white/20 overflow-hidden w-full flex my-10">
-        <div className="flex moveX items-center whitespace-nowrap py-4 text-[10vw] md:text-[6vw] uppercase font-bold font-[font1]">
+      {/* Infinite CSS Marquee */}
+      <div className="border-y border-white/20 overflow-hidden w-full flex my-10 group hover:bg-[#D3FD50] hover:text-black transition-colors duration-700 cursor-pointer">
+        <div className="flex shrink-0 moveX items-center whitespace-nowrap py-4 text-[10vw] md:text-[6vw] uppercase font-bold font-[font1]">
           {[...Array(4)].map((_, index) => (
             <span key={index} className="flex items-center gap-3 lg:gap-6 lg:text-[7vw] text-4xl mx-4">
               Manthan@M72.ca
               <img
                 src={Logo}
                 alt="Logo"
-                className="w-24 h-12 md:w-56 md:h-28 rounded-full object-cover shrink-0"
+                className="w-24 h-12 md:w-56 md:h-28 rounded-full object-cover shrink-0 filter drop-shadow-md"
               />
             </span>
           ))}
         </div>
-        <div className="flex moveX items-center whitespace-nowrap py-4 text-[10vw] md:text-[6vw] uppercase font-bold font-[font1]">
+        <div className="flex shrink-0 moveX items-center whitespace-nowrap py-4 text-[10vw] md:text-[6vw] uppercase font-bold font-[font1]">
           {[...Array(4)].map((_, index) => (
             <span key={index} className="flex items-center gap-3 lg:gap-6 lg:text-[7vw] text-4xl mx-4">
               Manthan@M72.ca
               <img
                 src={Logo}
                 alt="Logo"
-                className="w-24 h-12 md:w-56 md:h-28 rounded-full object-cover shrink-0"
+                className="w-24 h-12 md:w-56 md:h-28 rounded-full object-cover shrink-0 filter drop-shadow-md"
               />
             </span>
           ))}
@@ -105,6 +107,8 @@ const Contact = () => {
           </a>
         </p>
       </div>
+
+      <Footer />
     </section>
   );
 };
